@@ -21,16 +21,13 @@ public class ContaController {
      *     Caso número não atenda o requisito irá lançar excessão.
      * </p>
      * @param numeroConta valor digitado para informar o numero da conta para cadastrar
-     * @return true assim o main consegue identificar se a validação ocorreu bem ou mal
      * @throws IllegalArgumentException lançada para quando o valor não possui 5 dígitos
      */
-    public boolean validarNumeroConta(int numeroConta) throws IllegalArgumentException {
+    public void validarNumeroConta(int numeroConta) throws IllegalArgumentException {
         if (numeroConta < 10000 || numeroConta > 99999) {
             // Se o número não possuir 5 dígitos é lançada uma exceção
             throw new IllegalArgumentException("O número da conta deve conter 5 dígitos.");
         }
-
-        return true;
     }
 
     /**
@@ -42,16 +39,13 @@ public class ContaController {
      * </p>
      *
      * @param agencia valor digitado para informar a agência da conta para cadastrar
-     * @return true assim o main consegue identificar se a validação ocorreu bem ou mal
      * @throws IllegalArgumentException lançada para quando o valor é branco não encontrado
      */
-    public boolean validarAgencia(String agencia) throws IllegalArgumentException {
+    public void validarAgencia(String agencia) throws IllegalArgumentException {
         if (agencia.isBlank()) {
             // Caso o valor seja blank ou empty lança a excessão
             throw new IllegalArgumentException("Entrada inválida. Por favor, dígite o número da agência.");
         }
-
-        return true;
     }
 
     /**
@@ -64,10 +58,9 @@ public class ContaController {
      * </p>
      *
      * @param nomeCliente valor digitado para informar o nome do titular da conta.
-     * @return true caso o nome atenda aos critérios de validação.
      * @throws IllegalArgumentException lançada quando o nome é vazio ou não contém um espaço.
      */
-    public boolean validarNomeCliente(String nomeCliente) throws IllegalArgumentException {
+    public void validarNomeCliente(String nomeCliente) throws IllegalArgumentException {
         if (nomeCliente == null || nomeCliente.isBlank()) {
             // Caso o valor seja nulo, em branco ou apenas espaços
             throw new IllegalArgumentException("O nome do cliente não pode ser vazio.");
@@ -78,8 +71,6 @@ public class ContaController {
         if (!nomeCliente.trim().contains(" ")) {
             throw new IllegalArgumentException("Por favor, digite o nome completo (pelo menos nome e sobrenome).");
         }
-
-        return true;
     }
 
     /**
@@ -91,16 +82,13 @@ public class ContaController {
      * </p>
      *
      * @param saldo valor digitado para o saldo inicial da conta.
-     * @return true caso o saldo seja maior ou igual a zero.
      * @throws IllegalArgumentException lançada quando o saldo é um número negativo.
      */
-    public boolean validarSaldo(double saldo) throws IllegalArgumentException {
+    public void validarSaldo(double saldo) throws IllegalArgumentException {
         // A única regra para o saldo inicial é que ele não pode ser negativo.
         if (saldo < 0) {
             throw new IllegalArgumentException("O saldo inicial não pode ser um valor negativo.");
         }
-
-        return true;
     }
 
     /**
