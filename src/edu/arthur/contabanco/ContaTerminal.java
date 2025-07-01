@@ -62,10 +62,7 @@ public class ContaTerminal {
                     case 3 -> {
                         return;
                     }
-                    default -> {
-                        System.out.println("Valor inválido.\nDigite apenas o número da opção desejada.");
-                        continue;
-                    }
+                    default -> System.out.println("Valor inválido.\nDigite apenas o número da opção desejada.");
                 }
             }
 
@@ -75,7 +72,7 @@ public class ContaTerminal {
              */
             catch (InputMismatchException e){
                 System.out.println("Valor inválido.\nDigite apenas o número da opção desejada.\nException: " + e);
-                continue;
+
             }
 
             // Manter controle de processos pelo terminal.
